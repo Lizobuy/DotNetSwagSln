@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace DotNetSwag
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OrderingPage : ContentPage
+    public partial class OrderPage : ContentPage
     {
-        public OrderingPage()
+        public OrderPage()
         {
             InitializeComponent();
         }
