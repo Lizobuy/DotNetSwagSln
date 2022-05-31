@@ -4,23 +4,28 @@
              x:Class="DotNetSwag.OrderPage" Title="Capture Details">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="Pink" Padding="24" CornerRadius="10">
-                    <Label Text="DOT NET SWAG" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
-                </Frame>
-                <Label Text="Name" FontSize="16" Padding="30,10,30,10"/>
-                <Frame Margin="0" Padding="3" CornerRadius="30">
-                    <Entry/>
-                </Frame>
-                <Label Text="Gender" FontSize="16" Padding="30,0,30,0"/>
-                <CheckBox/>
-                <CheckBox/>
-                <Label Text="T Shirt Size" FontSize="16" Padding="30,0,30,0"/>
-                <CheckBox/>
-                <CheckBox/>
-                <CheckBox/>
-                <CheckBox/>
-                <Label FontSize="16" Padding="30,24,30,0"/>
 
-            </StackLayout>
+            <Label Text="Name"  FontAttributes="Bold" FontSize="18" Padding="30,10,30,10"/>
+                <Frame Margin="0" Padding="3" CornerRadius="30">
+            <Entry/>
+                </Frame>
+                <Label Text="Gender" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+                <CheckBox/>
+                <CheckBox/>
+            <Label Text="T Shirt Size" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+              
+            <CheckBox/>
+                <CheckBox/>
+                <CheckBox/>
+                <CheckBox/>
+
+            <Label Text="Date of Order"  FontAttributes="Bold" FontSize="16" Padding="30,24,30,0"/>
+            <DatePicker/>
+            <Label Text="T-Shirt Color" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+            <Entry/>
+            <Label Text="Shipping Address" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+            <Entry/>
+            <Button x:Name=" SaveButton" Text="Save" BackgroundColor="Pink" CornerRadius="20"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
