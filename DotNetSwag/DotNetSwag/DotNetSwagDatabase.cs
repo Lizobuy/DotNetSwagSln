@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 
 
@@ -12,7 +13,7 @@ namespace DotNetSwag
 
         public DotNetSwagDatabase()
         {
-            ///
+           
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             path = path + "joke.db";
 
