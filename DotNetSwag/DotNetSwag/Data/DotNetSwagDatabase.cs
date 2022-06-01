@@ -34,12 +34,12 @@ namespace DotNetSwag
 
         public Task<Orders> GetItemAsync(int id)
         {
-            return Database.Table<Orders>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return Database.Table<Orders>().Where(i => i.Date == Date).FirstOrDefaultAsync();
         }
 
         public Task<int> SaveItemAsync(Orders item)
         {
-            if (item.ID != 0)
+            if (item.Date != 0)
             {
                 return Database.UpdateAsync(item);
             }

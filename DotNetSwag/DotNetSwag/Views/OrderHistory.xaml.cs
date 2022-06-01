@@ -33,7 +33,7 @@ namespace DotNetSwag
         });
     }
 
-    async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+    async void OnOrderPageSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {

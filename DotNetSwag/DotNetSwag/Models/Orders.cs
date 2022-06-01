@@ -8,7 +8,7 @@ namespace DotNetSwag.Models
     public class Orders
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int Date { get; set; }
         public string Name { get; set; }
         public string Gender { get; set; }
 
