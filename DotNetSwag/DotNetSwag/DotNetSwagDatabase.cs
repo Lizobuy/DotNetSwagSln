@@ -22,14 +22,6 @@ namespace DotNetSwag
             _database.CreateTable<OrderHistory>();
         }
 
-        public List<OrderHistory> GetJokes()
-        {
-            return _database.Table<OrderHistory>().OrderByDescending(x => x.OrderDate).ToList();
-        }
-
-        public void SaveDotNetSwag(OrderHistory Order)
-        {
-            _database.Insert(Order);
-        }
+    
     }
 }

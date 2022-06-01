@@ -25,7 +25,7 @@
             <Entry/>
             <Label Text="Shipping Address" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
             <Entry/>
-            <Button x:Name=" SaveButton" Text="Save" BackgroundColor="Pink" CornerRadius="20"/>
+            <Button x:Name=" SaveButton" Text="Save" BackgroundColor="Pink" CornerRadius="20" Clicked="SaveButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
