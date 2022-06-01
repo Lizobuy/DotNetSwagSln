@@ -16,7 +16,7 @@ namespace DotNetSwag
         {
             InitializeComponent();
         }
-    }
+    
     protected override async void OnAppearing()
     {
         base.OnAppearing();
@@ -25,7 +25,7 @@ namespace DotNetSwag
         listView.ItemsSource = await database.GetItemsAsync();
     }
 
-    async void OnOrderAdded(object sender, EventArgs e)
+    async void OnItemAdded(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new OrderPage
         {
@@ -33,14 +33,15 @@ namespace DotNetSwag
         });
     }
 
-    async void OnOrderPageSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        if (e.SelectedItem != null)
+        async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            await Navigation.PushAsync(new OrderPage
+            if (e.SelectedItem != null)
             {
-                BindingContext = e.SelectedItem as OrderPage
-            });
+                await Navigation.PushAsync(new OrderPage
+                {
+                    BindingContext = e.SelectedItem as OrderPage
+                });
+            }
         }
     }
 }
