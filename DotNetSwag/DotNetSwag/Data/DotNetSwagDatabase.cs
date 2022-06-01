@@ -1,8 +1,8 @@
-﻿using SQLite;
+﻿using DotNetSwag.Models;
+using SQLite;
 using System;
 using System.Collections.Generic;
-
-
+using System.Threading.Tasks;
 
 namespace DotNetSwag
 {
@@ -10,10 +10,10 @@ namespace DotNetSwag
     {
         static SQLiteAsyncConnection Database;
 
-        public static readonly AsyncLazy<TodoItemDatabase> Instance = new AsyncLazy<TodoItemDatabase>(async () =>
+        public static readonly AsyncLazy<DotNetSwagDatabase> Instance = new AsyncLazy<DotNetSwagDatabase>(async () =>
         {
-            var instance = new TodoItemDatabase();
-            CreateTableResult result = await Database.CreateTableAsync<TodoItem>();
+            var instance = new DotNetSwagDatabase();
+            CreateTableResult result = await Database.CreateTableAsync<Orders>();
             return instance;
         });
 
@@ -22,22 +22,22 @@ namespace DotNetSwag
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
-        public Task<List<TodoItem>> GetItemsAsync()
+        public Task<List<Orders>> GetItemsAsync()
         {
-            return Database.Table<TodoItem>().ToListAsync();
+            return Database.Table<Orders>().ToListAsync();
         }
 
-        public Task<List<TodoItem>> GetItemsNotDoneAsync()
+        public Task<List<Orders>> GetItemsNotDoneAsync()
         {
-            return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+            return Database.QueryAsync<Orders>("SELECT * FROM [Orders] WHERE [Done] = 0");
         }
 
-        public Task<TodoItem> GetItemAsync(int id)
+        public Task<Orders> GetItemAsync(int id)
         {
-            return Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return Database.Table<Orders>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(TodoItem item)
+        public Task<int> SaveItemAsync(Orders item)
         {
             if (item.ID != 0)
             {
@@ -49,7 +49,7 @@ namespace DotNetSwag
             }
         }
 
-        public Task<int> DeleteItemAsync(TodoItem item)
+        public Task<int> DeleteItemAsync(Orders item)
         {
             return Database.DeleteAsync(item);
         }
