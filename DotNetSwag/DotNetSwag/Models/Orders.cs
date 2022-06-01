@@ -1,11 +1,16 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DotNetSwag.Service
+namespace DotNetSwag.Models
 {
-    internal class Orders
+    public class Orders
     {
-        private readonly List<string> _orders;
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Notes { get; set; }
+        public bool Done { get; set; }
     }
 }
