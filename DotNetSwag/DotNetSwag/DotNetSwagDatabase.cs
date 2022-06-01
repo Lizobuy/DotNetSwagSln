@@ -15,21 +15,21 @@ namespace DotNetSwag
         {
            
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            path = path + "joke.db";
+            path = path + "Orders.db";
 
             _database = new SQLiteConnection(path, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
 
-            _database.CreateTable<DotNetSwag>();
+            _database.CreateTable<OrderHistory>();
         }
 
-        public List<DadJoke> GetJokes()
+        public List<OrderHistory> GetJokes()
         {
-            return _database.Table<Orders>().OrderByDescending(x => x.JokeDate).ToList();
+            return _database.Table<OrderHistory>().OrderByDescending(x => x.OrderDate).ToList();
         }
 
-        public void SaveDotNetSwag(DadJoke joke)
+        public void SaveDotNetSwag(OrderHistory Order)
         {
-            _database.Insert(Orders);
+            _database.Insert(Order);
         }
     }
 }
