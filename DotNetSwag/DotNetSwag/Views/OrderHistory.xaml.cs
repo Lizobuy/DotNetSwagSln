@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DotNetSwag.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,9 @@ namespace DotNetSwag
 
     async void OnItemAdded(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new OrderPage
+        await Navigation.PushAsync(new MainPage()
         {
-            BindingContext = new OrderPage()
+            BindingContext = new Orders()
         });
     }
 
@@ -37,11 +38,16 @@ namespace DotNetSwag
         {
             if (e.SelectedItem != null)
             {
-                await Navigation.PushAsync(new OrderPage
+                await Navigation.PushAsync(new MainPage
                 {
-                    BindingContext = e.SelectedItem as OrderPage
+                    BindingContext = e.SelectedItem as Orders
                 });
             }
+        }
+
+        private async void AddItem(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }

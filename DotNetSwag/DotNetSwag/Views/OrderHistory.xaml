@@ -5,7 +5,8 @@
     <ContentPage.ToolbarItems>
        
     </ContentPage.ToolbarItems>
-    <ListView x:Name="listView"
+    <StackLayout>
+        <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OnListItemSelected">
         <ListView.ItemTemplate>
@@ -17,10 +18,15 @@
                         <Label Text="{Binding Name}"
                                VerticalTextAlignment="Center"
                                HorizontalOptions="StartAndExpand" />
+
                         
                     </StackLayout>
+                    
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+        <Button Text="Insert" Clicked="AddItem" BackgroundColor="Pink" CornerRadius="20"/>
+    </StackLayout>
+
 </ContentPage>

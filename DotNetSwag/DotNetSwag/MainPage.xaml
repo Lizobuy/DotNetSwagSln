@@ -1,9 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:DotNetSwag="clr-namespace:DotNetSwag"
-             x:Class="DotNetSwag.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="DotNetSwag.MainPage">
 
-    <DotNetSwag:OrderPage/>
-    <DotNetSwag:OrderHistory/>
 
-</TabbedPage>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Name"  FontAttributes="Bold" FontSize="18" Padding="30,10,30,10"/>
+
+            <Entry Text="{Binding Name}" />
+
+            <Label Text="Gender" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+            <Entry Text="{Binding Gender}" />
+            <Label Text="T Shirt Size" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+            <Entry Text="{Binding Size}" />
+            <Label Text="Date of Order"  FontAttributes="Bold" FontSize="18" Padding="30,24,30,0"/>
+            <DatePicker/>
+            <Label Text="T-Shirt Color" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+            <Entry Text="{Binding Color}"/>
+            <Label Text="Shipping Address" FontAttributes="Bold" FontSize="18" Padding="30,0,30,0"/>
+            <Entry Text="{Binding Address}"/>
+            <Button x:Name=" SaveButton" Text="Save" BackgroundColor="Pink" CornerRadius="20" Clicked="OnSaveClicked"/>
+            <Button x:Name=" OrderListPage" Text="Orders" BackgroundColor="Pink" CornerRadius="20" Clicked="OnOrderClicked"/>
+            <Button Text="Delete" BackgroundColor="Pink" CornerRadius="20" Clicked="OnDeleteClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+

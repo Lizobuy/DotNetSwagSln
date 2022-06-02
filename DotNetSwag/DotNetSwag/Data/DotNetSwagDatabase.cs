@@ -48,10 +48,10 @@ namespace DotNetSwag
                 return Database.InsertAsync(item);
             }
         }
-
-        public Task<int> DeleteItemAsync(Orders item)
+         public Task <int> DeleteItemAsync(Orders item)
         {
-            return Database.DeleteAsync(item);
+           return  Database.DeleteAsync(item);
         }
+        
     }
 }
