@@ -15,8 +15,7 @@ namespace DotNetSwag
         {
             InitializeComponent();
             var order = new Orders();
-            BindingContext = order;
-        }
+            BindingContext = order;        }
 
         async void OnSaveClicked(object sender, EventArgs e)
         {
